@@ -1,128 +1,243 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 36px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  overflow-x: hidden;
 }
 
 :root {
-    --fundo: #1E1E1E;
+  --fundo: #1e1e1e;
 }
 
 body {
-    background-color: var(--fundo);
-    max-width: 100vw;
+  
+  background-color: var(--fundo);
+  max-width: 100vw;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  
+
+  .container {
+    position: relative;
+    max-width: 1440px;
+    height: 100%;
     width: 100%;
 
-    .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: opacidade 1s linear both;
+    animation-delay: 1s;
+
+    .avatar-capa {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      max-width: 550px;
+      width: 100%;
+      z-index: 4;
+      opacity: 0;
+      animation: opacidade 1s linear both;
+      animation-delay: 2s;
+    }
+
+    .avatar-flavio {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      max-width: 450px;
+      width: 100%;
+      z-index: 4;
+      opacity: 0;
+      animation: opacidade 1s linear both;
+      animation-delay: 2s;
+    }
+
+    .coluna-direita {
+      position: absolute;
+      max-height: 80%;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      opacity: 0;
+      animation: opacidade 1s linear both;
+      animation-delay: 1s;
+    }
+
+    .coluna-esquerda {
+      position: absolute;
+      max-height: 80%;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      animation: opacidade 1s linear both;
+      animation-delay: 1s;
+    }
+
+    .container-links {
+      position: relative;
+      z-index: 3;
+      height: 100%;
+      max-width: 600px;
+      width: 100%;
+
+      padding: 50px 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 50px;
+      animation: opacidade 1s linear both;
+      animation-delay: 3.5s;
+
+      .background {
+        width: 100%;
         height: 100%;
+
+        position: absolute;
+        top: 0;
+        z-index: -1;
+      }
+
+      .header {
+        max-width: 300px;
+        width: 100%;
+      }
+
+      .links {
+        padding: 0 3%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+        position: relative;
+        animation: links 300ms linear both;
+        animation-delay: 4s;
+
+        a {
+          text-decoration: none;
+          
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .logo {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      height: 215px;
+      opacity: 0;
+
+      animation: opacidade 1s linear both;
+      animation-delay: 3s;
+
+      .capafla-logo {
+        height: 62px;
+      }
+
+      .detalhe {
+        position: absolute;
+        left: 50%;
+        top: 60px;
+        transform: translateX(-50%);
+        height: 153px;
+        max-width: 1280px;
         width: 100%;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        .coluna-direita {
-            position: absolute;
-            max-height: 100vh;
-            top: 0;
-            right: 0;
-            z-index: 2;
-        }
-
-        .coluna-esquerda {
-            position: absolute;
-            max-height: 100vh;
-            top: 0;
-            left: 0;
-            z-index: 2;
-        }
-
-
-
-        .container-links {
-            position: relative;
-            z-index: 3;
-            height: 100%;
-            max-width: 600px;
-            width: 100%;
-
-            
-
-            padding: 50px 0;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            gap: 50px;
-
-            .background {
-                width: 100%;
-                height: 100%;
-
-                position: absolute;
-                top: 0;
-                z-index: -1;
-            }
-
-            .header {
-                max-width: 300px;
-                width: 100%;
-            }
-
-            .links {
-                padding: 0 3%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                gap: 30px;
-
-                a {
-                    text-decoration: none;
-
-                    img {
-                        width: 100%;
-                    }
-                }
-            }
-
-        }
-
-        .logo {
-            position: relative;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-
-            .detalhe {
-                position: absolute;
-                left: 50%;
-                top: 60px;
-                transform: translateX(-50%);
-                height: 153px;
-                max-width: 1280px;
-                width: 100%;
-
-                background-image: url("embaixo.webp");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-            }
-        }
+        background-image: url("embaixo.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    .container {
+      .avatar-capa {
+        right: -160px;
+      }
+
+      .avatar-flavio {
+        left: -100px;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
-    body {
-        .container {
-            .coluna-direita, .coluna-esquerda {
-                display: none;
-            }
-        }
+  body {
+    .container {
+      .coluna-direita,
+      .coluna-esquerda {
+        display: none;
+      }
     }
+  }
+}
+
+@media (max-width: 425px) {
+  body {
+    .container {
+
+        .avatar-capa {
+            bottom: 112px;
+        }
+
+        .avatar-flavio {
+            bottom: 112px;
+            max-height: 410px;
+            width: auto;
+            left: -50px;
+        }
+      .logo {
+        height: 112px;
+        .detalhe {
+          background-image: url("Frame.png");
+          height: 50px;
+          background-size: contain;
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes opacidade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes links {
+  from {
+    opacity: 0;
+    left: -50px;
+  }
+
+  to {
+    opacity: 1;
+    left: 0;
+    
+  }
 }
